@@ -1,48 +1,42 @@
-const experiences = [
+import ExperienceCard, { type ExperienceEntry } from "./ExperienceCard";
+import SectionHeading from "./SectionHeading";
+
+const experiences: ExperienceEntry[] = [
   {
-    period: "2024 — Present",
+    duration: "2024 — Present",
     role: "Software Engineer",
-    company: "Placeholder Company",
+    organization: "Placeholder Company",
     description:
-      "Placeholder description of your responsibilities, impact, and the technologies you worked with in this role.",
+      "Lead work on placeholder systems and services, focusing on reliability and developer experience. Describe a concrete outcome or impact you delivered here.",
+    skills: ["TypeScript", "Next.js", "PostgreSQL", "AWS"],
   },
   {
-    period: "2022 — 2024",
+    duration: "2022 — 2024",
     role: "Software Engineer",
-    company: "Placeholder Company",
+    organization: "Placeholder Company",
     description:
-      "Placeholder description of your responsibilities, impact, and the technologies you worked with in this role.",
+      "Built and maintained placeholder features across the stack. Collaborated with a small team to ship user-facing improvements and internal tooling.",
+    skills: ["React", "Node.js", "GraphQL"],
   },
   {
-    period: "2020 — 2022",
+    duration: "2020 — 2022",
     role: "Junior Engineer",
-    company: "Placeholder Company",
+    organization: "Placeholder Company",
     description:
-      "Placeholder description of your responsibilities, impact, and the technologies you worked with in this role.",
+      "Contributed to placeholder projects, learned the fundamentals of building production software, and grew into owning larger pieces of work.",
+    skills: ["Python", "Docker", "REST"],
   },
 ];
 
 export default function Experience() {
   return (
     <section id="experience" className="scroll-mt-24">
-      <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-zinc-200">
-        Experience
-      </h2>
-      <ol className="space-y-10">
+      <SectionHeading>Experience</SectionHeading>
+      <div className="-mx-4 space-y-4">
         {experiences.map((exp) => (
-          <li key={exp.period} className="grid gap-2 sm:grid-cols-[8rem_1fr]">
-            <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-              {exp.period}
-            </p>
-            <div>
-              <h3 className="font-medium text-zinc-100">
-                {exp.role} · {exp.company}
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400">{exp.description}</p>
-            </div>
-          </li>
+          <ExperienceCard key={exp.duration} {...exp} />
         ))}
-      </ol>
+      </div>
     </section>
   );
 }

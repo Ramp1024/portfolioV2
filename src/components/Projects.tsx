@@ -1,54 +1,43 @@
-const projects = [
+import ProjectArchive from "./ProjectArchive";
+import ProjectCard, { type Project } from "./ProjectCard";
+import SectionHeading from "./SectionHeading";
+
+const projects: Project[] = [
   {
     title: "Placeholder Project One",
     description:
-      "Placeholder description of the project, the problem it solves, and the technologies used to build it.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
+      "A featured placeholder project. Describe what it does, the problem it solves, and the interesting engineering decisions behind it.",
+    technologies: ["Next.js", "TypeScript", "Tailwind"],
+    githubUrl: "#",
+    demoUrl: "#",
   },
   {
     title: "Placeholder Project Two",
     description:
-      "Placeholder description of the project, the problem it solves, and the technologies used to build it.",
-    tags: ["React", "Node.js"],
+      "A featured placeholder project. Describe what it does, the problem it solves, and the interesting engineering decisions behind it.",
+    technologies: ["React", "Node.js", "PostgreSQL"],
+    githubUrl: "#",
   },
   {
     title: "Placeholder Project Three",
     description:
-      "Placeholder description of the project, the problem it solves, and the technologies used to build it.",
-    tags: ["Python", "Systems"],
+      "A featured placeholder project. Describe what it does, the problem it solves, and the interesting engineering decisions behind it.",
+    technologies: ["Python", "FastAPI", "Redis"],
+    githubUrl: "#",
+    demoUrl: "#",
   },
 ];
 
 export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-24">
-      <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-zinc-200">
-        Projects
-      </h2>
-      <ul className="space-y-8">
+      <SectionHeading>Projects</SectionHeading>
+      <div className="-mx-4 space-y-4">
         {projects.map((project) => (
-          <li key={project.title}>
-            <a href="#" className="group block">
-              <h3 className="font-medium text-zinc-100 group-hover:text-teal-300">
-                {project.title}
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400">
-                {project.description}
-              </p>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </a>
-          </li>
+          <ProjectCard key={project.title} {...project} />
         ))}
-      </ul>
+      </div>
+      <ProjectArchive />
     </section>
   );
 }

@@ -1,44 +1,42 @@
-const articles = [
+import ArticleCard, { type Article } from "./ArticleCard";
+import SectionHeading from "./SectionHeading";
+
+const articles: Article[] = [
   {
     title: "Placeholder Article One",
-    date: "2025",
-    description: "Placeholder summary of the article and what it covers.",
+    date: "Feb 2025",
+    readingTime: "6 min read",
+    summary:
+      "A short placeholder summary of the article. Introduce the topic and hint at the key takeaway a reader can expect.",
+    url: "#",
   },
   {
     title: "Placeholder Article Two",
-    date: "2025",
-    description: "Placeholder summary of the article and what it covers.",
+    date: "Jan 2025",
+    readingTime: "4 min read",
+    summary:
+      "A short placeholder summary of the article. Introduce the topic and hint at the key takeaway a reader can expect.",
+    url: "#",
   },
   {
     title: "Placeholder Article Three",
-    date: "2024",
-    description: "Placeholder summary of the article and what it covers.",
+    date: "Nov 2024",
+    readingTime: "8 min read",
+    summary:
+      "A short placeholder summary of the article. Introduce the topic and hint at the key takeaway a reader can expect.",
+    url: "#",
   },
 ];
 
 export default function Writing() {
   return (
     <section id="writing" className="scroll-mt-24">
-      <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-zinc-200">
-        Writing
-      </h2>
-      <ul className="space-y-8">
+      <SectionHeading>Writing</SectionHeading>
+      <div className="-mx-4 space-y-4">
         {articles.map((article) => (
-          <li key={article.title}>
-            <a href="#" className="group block">
-              <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-                {article.date}
-              </p>
-              <h3 className="mt-1 font-medium text-zinc-100 group-hover:text-teal-300">
-                {article.title}
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400">
-                {article.description}
-              </p>
-            </a>
-          </li>
+          <ArticleCard key={article.title} {...article} />
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

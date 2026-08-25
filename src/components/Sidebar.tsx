@@ -11,7 +11,6 @@ const navItems = [
 const socialLinks = [
   { label: "GitHub", href: "#" },
   { label: "LinkedIn", href: "#" },
-  { label: "Twitter", href: "#" },
   { label: "Email", href: "#" },
 ];
 
@@ -19,21 +18,21 @@ export default function Sidebar() {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[35%] lg:flex-col lg:justify-between lg:py-24">
       <div>
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-          Ramprakash
-        </h1>
-        <p className="mt-4 max-w-xs text-lg text-zinc-400">
+        <h1 className="text-hero">Ramprakash</h1>
+        <p className="mt-3 text-lg font-medium text-zinc-300">
           Engineer exploring AI, systems, and interesting problems.
         </p>
+        <p className="text-body mt-4 max-w-xs text-sm">
+          I build reliable systems and enjoy digging into hard problems across
+          AI and infrastructure. Currently focused on shipping thoughtful,
+          well-crafted software.
+        </p>
 
-        <nav className="mt-16 hidden lg:block" aria-label="Section navigation">
-          <ul className="space-y-4">
+        <nav className="mt-10 lg:mt-16" aria-label="Section navigation">
+          <ul className="flex flex-wrap gap-x-6 gap-y-3 lg:flex-col lg:gap-4">
             {navItems.map((item) => (
               <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className="text-sm font-medium uppercase tracking-widest text-zinc-500 transition-colors hover:text-zinc-100"
-                >
+                <a href={`#${item.id}`} className="text-nav">
                   {item.label}
                 </a>
               </li>
@@ -42,7 +41,7 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 lg:mt-8">
         {socialLinks.map((link) => (
           <a
             key={link.label}
@@ -54,7 +53,7 @@ export default function Sidebar() {
         ))}
         <a
           href="#"
-          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-100"
+          className="inline-flex items-center gap-2 rounded-md border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-200 transition-colors hover:border-accent hover:text-accent"
         >
           <FileText className="h-4 w-4" />
           Resume

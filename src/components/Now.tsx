@@ -1,38 +1,54 @@
-const nowItems = [
+import SectionHeading from "./SectionHeading";
+
+const nowGroups = [
   {
     heading: "Currently Building",
-    items: ["Placeholder project or side project you are working on."],
+    items: [
+      "This portfolio — a typography-first, content-focused personal site.",
+      "A placeholder side project exploring an idea I care about.",
+    ],
   },
   {
     heading: "Currently Reading",
-    items: ["Placeholder book or article title."],
+    items: [
+      "Placeholder Book Title — Author",
+      "A placeholder long-form article or paper.",
+    ],
   },
   {
     heading: "Currently Learning",
-    items: ["Placeholder topic, tool, or skill you are exploring."],
+    items: [
+      "Placeholder topic — going deeper on fundamentals.",
+      "A placeholder tool or framework I want to master.",
+    ],
+  },
+  {
+    heading: "Upcoming",
+    items: [
+      "Placeholder goal or milestone for the next few months.",
+      "A placeholder event, talk, or project I'm looking forward to.",
+    ],
   },
 ];
 
 export default function Now() {
   return (
     <section id="now" className="scroll-mt-24">
-      <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-zinc-200">
-        Now
-      </h2>
-      <dl className="space-y-6">
-        {nowItems.map((group) => (
+      <SectionHeading>Now</SectionHeading>
+      <div className="grid gap-8 sm:grid-cols-2">
+        {nowGroups.map((group) => (
           <div key={group.heading}>
-            <dt className="font-medium text-zinc-100">{group.heading}</dt>
-            <dd className="mt-2">
-              <ul className="space-y-1 text-sm text-zinc-400">
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </dd>
+            <h3 className="text-eyebrow">{group.heading}</h3>
+            <ul className="mt-3 space-y-2">
+              {group.items.map((item) => (
+                <li key={item} className="text-body text-sm">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
-      </dl>
+      </div>
     </section>
   );
 }

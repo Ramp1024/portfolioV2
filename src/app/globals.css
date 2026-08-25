@@ -3,8 +3,57 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Accent */
+  --color-accent: var(--color-teal-300);
 }
 
 body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
+   Design system — typography tokens
+   Reusable classes that establish a consistent visual language.
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Hero title — sidebar name */
+  .text-hero {
+    @apply text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl;
+  }
+
+  /* Section titles */
+  .section-title {
+    @apply text-xs font-bold uppercase tracking-widest text-zinc-200;
+  }
+
+  /* Body copy */
+  .text-body {
+    @apply text-base leading-relaxed text-zinc-400;
+  }
+
+  /* Muted / secondary text */
+  .text-muted {
+    @apply text-sm text-zinc-500;
+  }
+
+  /* Eyebrow / metadata label */
+  .text-eyebrow {
+    @apply text-xs font-medium uppercase tracking-wide text-zinc-500;
+  }
+
+  /* Navigation text */
+  .text-nav {
+    @apply text-sm font-medium uppercase tracking-widest text-zinc-500 transition-colors hover:text-zinc-100;
+  }
+
+  /* Tag / pill */
+  .tag {
+    @apply rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent;
+  }
+
+  /* Comfortable reading width */
+  .prose-width {
+    @apply max-w-prose;
+  }
 }
