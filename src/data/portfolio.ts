@@ -65,12 +65,8 @@ export const portfolio: Portfolio = {
       category: "AI",
       date: "06/2026",
       description:
-        "A local-first Retrieval-Augmented Generation (RAG) system over Notion workspaces using Ollama-hosted LLMs, Qdrant vector search, and a pluggable connector architecture, ensuring no personal data leaves the local environment.",
+                "Built a privacy-first RAG system over Notion workspaces using local LLMs and hybrid retrieval. Improved retrieval quality from 0.74 → 0.95 Recall@5 through metadata-aware search, BM25, vector retrieval, and reranking.",
       achievements: [
-        "Architected a hybrid retrieval stack combining metadata-aware search, dense vector retrieval, BM25 lexical search, Reciprocal Rank Fusion (RRF), reranking, and grounded citation generation.",
-        "Developed an automated retrieval evaluation framework with curated benchmark datasets and category-level analysis (Recall@5, Recall@10, MRR), improving retrieval performance from 0.74 Recall@5 (vector-only) to 0.95 Recall@5 (hybrid retrieval).",
-        "Implemented natural-language query understanding with LLM-based intent analysis, metadata filter generation, and temporal query handling, enabling structured retrieval across dynamically discovered metadata schemas.",
-        "Shipped a streaming React/TypeScript interface with validated source citations and Dockerized deployment; retrieval and answer generation run entirely on local infrastructure using open-source models.",
       ],
       technologies: [
         "FastAPI",
@@ -89,11 +85,8 @@ export const portfolio: Portfolio = {
       category: "Hackathon",
       date: "06/2026",
       description:
-        "An MCP-based AI agent for the Reporting product, integrating with Apache Superset APIs to automate the end-to-end analytics pipeline from dataset creation to charts, dashboards, and report generation.",
-      achievements: [
-        "Built a harness API layer to orchestrate and validate multi-step execution, improving the consistency and reliability of AI-generated analytics workflows.",
-        "Contributed to the only end-to-end cross-product AI solution spanning CPQ, CLM, Approvals, and Reporting, earning critical acclaim from the judging panel for its technical depth and enterprise-wide scope.",
-      ],
+        "Built an MCP-based AI agent with Harness that automated analytics workflows from dataset creation to dashboard generation through Apache Superset integrations. Part of the only end-to-end cross-product AI solution spanning CPQ, CLM, Approvals, and Reporting.",
+      achievements: [],
       technologies: ["Python", "MCPs", "Apache Superset", "LLMs"],
       award: "Special recognition from the judging panel — Conga AI Hackathon",
     },

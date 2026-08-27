@@ -1,35 +1,12 @@
+import { portfolio } from "@/data/portfolio";
 import SectionHeading from "./SectionHeading";
 
 const nowGroups = [
-  {
-    heading: "Currently Building",
-    items: [
-      "This portfolio — a typography-first, content-focused personal site.",
-      "A placeholder side project exploring an idea I care about.",
-    ],
-  },
-  {
-    heading: "Currently Reading",
-    items: [
-      "Placeholder Book Title — Author",
-      "A placeholder long-form article or paper.",
-    ],
-  },
-  {
-    heading: "Currently Learning",
-    items: [
-      "Placeholder topic — going deeper on fundamentals.",
-      "A placeholder tool or framework I want to master.",
-    ],
-  },
-  {
-    heading: "Upcoming",
-    items: [
-      "Placeholder goal or milestone for the next few months.",
-      "A placeholder event, talk, or project I'm looking forward to.",
-    ],
-  },
-];
+  { heading: "Currently Building", items: portfolio.now.building },
+  { heading: "Currently Reading", items: portfolio.now.reading },
+  { heading: "Currently Learning", items: portfolio.now.learning },
+  { heading: "Currently Exploring", items: portfolio.now.exploring },
+].filter((group) => group.items.length > 0);
 
 export default function Now() {
   return (

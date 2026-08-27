@@ -1,4 +1,5 @@
 import { FileText } from "lucide-react";
+import { portfolio } from "@/data/portfolio";
 
 const navItems = [
   { id: "about", label: "About" },
@@ -8,25 +9,17 @@ const navItems = [
   { id: "now", label: "Now" },
 ];
 
-const socialLinks = [
-  { label: "GitHub", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "Email", href: "#" },
-];
+const { profile, socials } = portfolio;
 
 export default function Sidebar() {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[35%] lg:flex-col lg:justify-between lg:py-24">
       <div>
-        <h1 className="text-hero">Ramprakash</h1>
+        <h1 className="text-hero">{profile.name}</h1>
         <p className="mt-3 text-lg font-medium text-zinc-300">
           Engineer exploring AI, systems, and interesting problems.
         </p>
-        <p className="text-body mt-4 max-w-xs text-sm">
-          I build reliable systems and enjoy digging into hard problems across
-          AI and infrastructure. Currently focused on shipping thoughtful,
-          well-crafted software.
-        </p>
+        <p className="text-muted mt-2">{profile.location}</p>
 
         <nav className="mt-10 lg:mt-16" aria-label="Section navigation">
           <ul className="flex flex-wrap gap-x-6 gap-y-3 lg:flex-col lg:gap-4">
@@ -42,10 +35,10 @@ export default function Sidebar() {
       </div>
 
       <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 lg:mt-8">
-        {socialLinks.map((link) => (
+        {socials.map((link) => (
           <a
             key={link.label}
-            href={link.href}
+            href={link.url}
             className="text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-100"
           >
             {link.label}

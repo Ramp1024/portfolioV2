@@ -1,40 +1,18 @@
 import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { portfolio } from "@/data/portfolio";
 
-export type ArchiveEntry = {
-  name: string;
-  year: string;
-  tags: string[];
-  url?: string;
-};
-
-const archive: ArchiveEntry[] = [
-  {
-    name: "Placeholder Archive Project",
-    year: "2024",
-    tags: ["TypeScript", "CLI"],
-    url: "#",
-  },
-  {
-    name: "Placeholder Archive Project",
-    year: "2023",
-    tags: ["Go", "Systems"],
-    url: "#",
-  },
-  {
-    name: "Placeholder Archive Project",
-    year: "2023",
-    tags: ["Python", "ML"],
-    url: "#",
-  },
-  {
-    name: "Placeholder Archive Project",
-    year: "2022",
-    tags: ["React", "Tooling"],
-    url: "#",
-  },
-];
+const archive = portfolio.projects
+  .filter((project) => !project.featured)
+  .map((project) => ({
+    name: project.title,
+    year: project.date.split("/").pop() ?? project.date,
+    tags: project.technologies,
+    url: project.github ?? project.demo,
+  }));
 
 export default function ProjectArchive() {
+  if (archive.length === 0) return null;
+
   return (
     <details className="group mt-10 rounded-lg border border-zinc-800/80">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-nav marker:hidden">
