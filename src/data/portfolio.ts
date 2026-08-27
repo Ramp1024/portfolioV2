@@ -28,10 +28,6 @@ export const portfolio: Portfolio = {
       start: "04/2025",
       end: "Present",
       highlights: [
-        "Sole technical owner of CLM Workflows, re-architecting the workflow feature as Workflow Phase-2 on CLM to enable migration of 15+ enterprise Conga Contracts customers and accelerate adoption of Platform CLM.",
-        "Architected and delivered the Multiple Contract Requests feature from scratch, earning broad stakeholder approval for the solution design. Enabled customers to generate multiple contracts through a single streamlined workflow instead of manually drafting individual contracts, reducing repetitive effort by over 30%.",
-        "Developing internal AI agents that streamline engineering workflows through graph-based contextual retrieval, token optimization, and structured tool orchestration.",
-        "Developed Playwright (Java) regression test suites, reducing manual end-of-release testing effort by over 80% while minimizing defect leakage into higher environments.",
       ],
     },
     {
@@ -40,10 +36,7 @@ export const portfolio: Portfolio = {
       location: "Bengaluru, KA",
       start: "04/2023",
       end: "03/2025",
-      highlights: [
-        "Architected the CLM Redline AI UI from greenfield, leading a 3-engineer team through system design, implementation, code reviews, and cross-application compatibility, enabling rollout across Salesforce CLM, CFS, and RLP Platform.",
-        "Designed and built the integration layer enabling CLM to leverage Platform Workflow capabilities, delivering Workflow Phase 1 for strategic customers including Nomura and Michelin. The reusable architecture was subsequently adopted by multiple product teams to implement workflow capabilities within their applications.",
-      ],
+      highlights: [],
     },
     {
       role: "Associate Developer Intern",
@@ -52,7 +45,6 @@ export const portfolio: Portfolio = {
       start: "02/2022",
       end: "07/2022",
       highlights: [
-        "Partnered on the National Grid project by working on both Salesforce Admin and Salesforce Developer modules.",
       ],
     },
   ],

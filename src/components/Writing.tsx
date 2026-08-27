@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import ArticleCard, { type Article } from "./ArticleCard";
 import SectionHeading from "./SectionHeading";
 
@@ -31,11 +32,17 @@ const articles: Article[] = [
 export default function Writing() {
   return (
     <section id="writing" className="scroll-mt-24">
-      <SectionHeading>Writing</SectionHeading>
+      <SectionHeading>Rabbit Holes</SectionHeading>
       <div className="-mx-4 space-y-4">
-        {articles.map((article) => (
+        {articles.slice(0, 2).map((article) => (
           <ArticleCard key={article.title} {...article} />
         ))}
+      </div>
+      <div className="mt-4 flex justify-end">
+        <a href="#" className="text-nav inline-flex items-center gap-1.5">
+          more
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
       </div>
     </section>
   );

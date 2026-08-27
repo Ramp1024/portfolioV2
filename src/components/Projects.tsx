@@ -10,7 +10,7 @@ const featuredProjects = portfolio.projects.filter(
 export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-24">
-      <SectionHeading>Projects</SectionHeading>
+      <SectionHeading>What I've Built</SectionHeading>
       <div className="-mx-4 space-y-4">
         {featuredProjects.map((project) => (
           <ProjectCard

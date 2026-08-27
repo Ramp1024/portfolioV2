@@ -1,4 +1,4 @@
-import { Award as AwardIcon, Code, ExternalLink } from "lucide-react";
+import { Award as AwardIcon, ChevronDown, Code, ExternalLink } from "lucide-react";
 
 export type ProjectCardProps = {
   title: string;
@@ -22,66 +22,74 @@ export default function ProjectCard({
   award,
 }: ProjectCardProps) {
   return (
-    <div className="group grid gap-3 rounded-lg p-4 transition-colors hover:bg-zinc-900/50">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h3 className="font-medium text-zinc-100 group-hover:text-accent">
-            {title}
-          </h3>
-          {subtitle && <p className="text-muted mt-0.5">{subtitle}</p>}
+    <details className="group rounded px-4 py-3 transition-colors hover:bg-black/5">
+      <summary className="flex cursor-pointer list-none flex-col gap-3 marker:hidden">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="font-bold text-zinc-900 group-hover:underline">
+              {title}
+            </h3>
+            {subtitle && <p className="text-muted mt-0.5">{subtitle}</p>}
+          </div>
+          <ChevronDown className="mt-1 h-4 w-4 shrink-0 text-zinc-500 transition-transform group-open:rotate-180" />
         </div>
-        <div className="flex shrink-0 items-center gap-3">
-          {github && (
-            <a
-              href={github}
-              aria-label={`${title} source on GitHub`}
-              className="text-zinc-500 transition-colors hover:text-accent"
-            >
-              <Code className="h-5 w-5" />
-            </a>
-          )}
-          {demo && (
-            <a
-              href={demo}
-              aria-label={`${title} live demo`}
-              className="text-zinc-500 transition-colors hover:text-accent"
-            >
-              <ExternalLink className="h-5 w-5" />
-            </a>
-          )}
-        </div>
-      </div>
 
-      <p className="text-body text-sm">{description}</p>
-
-      {achievements.length > 0 && (
-        <ul className="space-y-2">
-          {achievements.map((achievement, index) => (
-            <li key={index} className="text-body flex gap-2 text-sm">
-              <span
-                aria-hidden
-                className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
-              />
-              <span>{achievement}</span>
+        <ul className="flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <li key={tech} className="tag">
+              {tech}
             </li>
           ))}
         </ul>
-      )}
+      </summary>
 
-      {award && (
-        <p className="text-muted flex items-center gap-2">
-          <AwardIcon className="h-4 w-4 text-accent" />
-          {award}
-        </p>
-      )}
+      <div className="mt-3 space-y-3 border-t border-black/10 pt-3">
+        <p className="text-body text-sm">{description}</p>
 
-      <ul className="mt-1 flex flex-wrap gap-2">
-        {technologies.map((tech) => (
-          <li key={tech} className="tag">
-            {tech}
-          </li>
-        ))}
-      </ul>
-    </div>
+        {achievements.length > 0 && (
+          <ul className="space-y-2">
+            {achievements.map((achievement, index) => (
+              <li key={index} className="text-body flex gap-2 text-sm">
+                <span
+                  aria-hidden
+                  className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                />
+                <span>{achievement}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {award && (
+          <p className="text-muted flex items-center gap-2">
+            <AwardIcon className="h-4 w-4 text-zinc-600" />
+            {award}
+          </p>
+        )}
+
+        {(github || demo) && (
+          <div className="flex items-center gap-4">
+            {github && (
+              <a
+                href={github}
+                className="text-muted inline-flex items-center gap-1.5 lowercase transition-colors hover:text-zinc-900"
+              >
+                <Code className="h-4 w-4" />
+                code
+              </a>
+            )}
+            {demo && (
+              <a
+                href={demo}
+                className="text-muted inline-flex items-center gap-1.5 lowercase transition-colors hover:text-zinc-900"
+              >
+                <ExternalLink className="h-4 w-4" />
+                demo
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </details>
   );
 }

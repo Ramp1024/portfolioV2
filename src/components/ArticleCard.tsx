@@ -12,23 +12,24 @@ export default function ArticleCard({
   title,
   date,
   readingTime,
-  summary,
   url,
 }: Article) {
   return (
-    <article className="group rounded-lg p-4 transition-colors hover:bg-zinc-900/50">
-      <a href={url ?? "#"} className="block">
+    <a
+      href={url ?? "#"}
+      className="group flex items-start justify-between gap-4 rounded px-4 py-3 transition-colors hover:bg-black/5"
+    >
+      <div>
         <div className="text-eyebrow flex items-center gap-3">
           <span>{date}</span>
           <span aria-hidden>·</span>
           <span>{readingTime}</span>
         </div>
-        <h3 className="mt-2 flex items-center gap-1 font-medium text-zinc-100 group-hover:text-accent">
+        <h3 className="mt-1 font-bold text-zinc-900 group-hover:underline">
           {title}
-          <ArrowUpRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
         </h3>
-        <p className="text-body mt-2 text-sm">{summary}</p>
-      </a>
-    </article>
+      </div>
+      <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-zinc-500 transition-colors group-hover:text-zinc-900" />
+    </a>
   );
 }

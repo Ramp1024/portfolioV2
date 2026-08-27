@@ -11,11 +11,11 @@ const nowGroups = [
 export default function Now() {
   return (
     <section id="now" className="scroll-mt-24">
-      <SectionHeading>Now</SectionHeading>
-      <div className="grid gap-8 sm:grid-cols-2">
+      <SectionHeading>Current Quests</SectionHeading>
+      <div className="grid gap-6 sm:grid-cols-2">
         {nowGroups.map((group) => (
           <div key={group.heading}>
-            <h3 className="text-eyebrow">{group.heading}</h3>
+            <h3 className="section-title">{group.heading}</h3>
             <ul className="mt-3 space-y-2">
               {group.items.map((item) => (
                 <li key={item} className="text-body text-sm">

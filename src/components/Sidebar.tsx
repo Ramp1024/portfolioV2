@@ -2,11 +2,11 @@ import { FileText } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 
 const navItems = [
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "writing", label: "Writing" },
-  { id: "now", label: "Now" },
+  { id: "about", label: "Who I Am" },
+  { id: "experience", label: "Where I've Worked" },
+  { id: "projects", label: "What I've Built" },
+  { id: "writing", label: "Rabbit Holes" },
+  { id: "now", label: "Current Quests" },
 ];
 
 const { profile, socials } = portfolio;
@@ -16,10 +16,10 @@ export default function Sidebar() {
     <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[35%] lg:flex-col lg:justify-between lg:py-24">
       <div>
         <h1 className="text-hero">{profile.name}</h1>
-        <p className="mt-3 text-lg font-medium text-zinc-300">
-          Engineer exploring AI, systems, and interesting problems.
+        <p className="mt-3 text-sm text-zinc-700">
+          engineer exploring ai, systems, and interesting problems.
         </p>
-        <p className="text-muted mt-2">{profile.location}</p>
+        <p className="text-muted mt-2 lowercase">{profile.location}</p>
 
         <nav className="mt-10 lg:mt-16" aria-label="Section navigation">
           <ul className="flex flex-wrap gap-x-6 gap-y-3 lg:flex-col lg:gap-4">
@@ -39,17 +39,17 @@ export default function Sidebar() {
           <a
             key={link.label}
             href={link.url}
-            className="text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-100"
+            className="text-sm lowercase text-zinc-500 transition-colors hover:text-zinc-900"
           >
             {link.label}
           </a>
         ))}
         <a
           href="#"
-          className="inline-flex items-center gap-2 rounded-md border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-200 transition-colors hover:border-accent hover:text-accent"
+          className="inline-flex items-center gap-2 rounded border border-zinc-400 px-3 py-1.5 text-sm lowercase text-zinc-800 transition-colors hover:border-zinc-900 hover:text-zinc-900"
         >
           <FileText className="h-4 w-4" />
-          Resume
+          resume
         </a>
       </div>
     </header>

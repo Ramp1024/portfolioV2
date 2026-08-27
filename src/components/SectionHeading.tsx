@@ -9,7 +9,7 @@ export default function SectionHeading({
   hideOnDesktop = false,
 }: SectionHeadingProps) {
   return (
-    <h2 className={`section-title mb-8 ${hideOnDesktop ? "lg:sr-only" : ""}`}>
+    <h2 className={`section-title mb-5 ${hideOnDesktop ? "lg:sr-only" : ""}`}>
       {children}
     </h2>
   );
