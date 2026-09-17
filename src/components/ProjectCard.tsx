@@ -22,7 +22,7 @@ export default function ProjectCard({
   award,
 }: ProjectCardProps) {
   return (
-    <details className="group rounded px-4 py-3 transition-colors hover:bg-black/5">
+    <details className="group rounded px-4 py-3 transition-colors hover:bg-black/2">
       <summary className="flex cursor-pointer list-none flex-col gap-3 marker:hidden">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -31,19 +31,13 @@ export default function ProjectCard({
             </h3>
             {subtitle && <p className="text-muted mt-0.5">{subtitle}</p>}
           </div>
-          <ChevronDown className="mt-1 h-4 w-4 shrink-0 text-zinc-500 transition-transform group-open:rotate-180" />
+          <div className="mt-1 flex shrink-0 items-center gap-4">
+            <ChevronDown className="h-4 w-4 text-zinc-500 transition-transform group-open:rotate-180" />
+          </div>
         </div>
-
-        <ul className="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <li key={tech} className="tag">
-              {tech}
-            </li>
-          ))}
-        </ul>
       </summary>
 
-      <div className="mt-3 space-y-3 border-t border-black/10 pt-3">
+      <div className="mt-3 space-y-4 border-t border-black/10 pt-3">
         <p className="text-body text-sm">{description}</p>
 
         {achievements.length > 0 && (
@@ -67,28 +61,42 @@ export default function ProjectCard({
           </p>
         )}
 
-        {(github || demo) && (
-          <div className="flex items-center gap-4">
-            {github && (
-              <a
-                href={github}
-                className="text-muted inline-flex items-center gap-1.5 lowercase transition-colors hover:text-zinc-900"
-              >
-                <Code className="h-4 w-4" />
-                code
-              </a>
-            )}
-            {demo && (
-              <a
-                href={demo}
-                className="text-muted inline-flex items-center gap-1.5 lowercase transition-colors hover:text-zinc-900"
-              >
-                <ExternalLink className="h-4 w-4" />
-                demo
-              </a>
-            )}
-          </div>
-        )}
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 pt-1">
+          <ul className="flex flex-wrap gap-2">
+            {technologies.map((tech) => (
+              <li key={tech} className="tag">
+                {tech}
+              </li>
+            ))}
+          </ul>
+
+          {(github || demo) && (
+            <div className="flex items-center gap-4">
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm lowercase text-zinc-500 transition-colors hover:text-accent"
+                >
+                  <Code className="h-4 w-4" />
+                  view code
+                </a>
+              )}
+              {demo && (
+                <a
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm lowercase text-zinc-500 transition-colors hover:text-accent"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  live demo
+                </a>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </details>
   );

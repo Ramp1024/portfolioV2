@@ -7,12 +7,16 @@
   /* Warm paper background + near-black ink, matching the reference aesthetic */
   --color-paper: #fdfff4;
   --color-ink: #111111;
-  --color-accent: #111111;
+  --color-accent: #9a3b2e;
 }
 
 body {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
+
+  background-color: var(--color-paper);
+  /* Gray paper grain — noise drives the alpha of black specks so it renders reliably. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
 }
 
 /* ---------------------------------------------------------------------------
@@ -22,7 +26,7 @@ body {
 @layer components {
   /* Hero title — sidebar name */
   .text-hero {
-    @apply text-2xl font-bold lowercase tracking-tight text-zinc-900;
+    @apply text-4xl font-bold lowercase tracking-tight text-zinc-900 lg:text-5xl;
   }
 
   /* Section titles — lowercase, bold, understated */
@@ -37,22 +41,22 @@ body {
 
   /* Muted / secondary text */
   .text-muted {
-    @apply text-sm text-zinc-500;
+    @apply text-sm text-zinc-600;
   }
 
   /* Eyebrow / metadata label */
   .text-eyebrow {
-    @apply text-xs text-zinc-500;
+    @apply text-xs text-zinc-600;
   }
 
   /* Navigation text */
   .text-nav {
-    @apply text-sm lowercase text-zinc-500 transition-colors hover:text-zinc-900;
+    @apply text-sm lowercase text-zinc-600 transition-colors hover:text-accent;
   }
 
-  /* Tag — small bordered, uppercase box */
+  /* Tag — soft paper-tinted chip */
   .tag {
-    @apply rounded border border-zinc-400 px-2 py-0.5 text-[10px] uppercase tracking-wide text-zinc-500;
+    @apply rounded bg-black/[0.04] px-2 py-0.5 text-[11px] lowercase tracking-wide text-zinc-600;
   }
 
   /* Comfortable reading width */

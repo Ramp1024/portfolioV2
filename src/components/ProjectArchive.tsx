@@ -14,7 +14,7 @@ export default function ProjectArchive() {
   if (archive.length === 0) return null;
 
   return (
-    <details className="group mt-10 rounded border border-zinc-300">
+    <details className="group mt-10 rounded border border-zinc-300 transition-colors has-[summary:hover]:border-accent">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-nav marker:hidden">
         View project archive
         <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
@@ -25,7 +25,7 @@ export default function ProjectArchive() {
           <li key={`${entry.name}-${index}`}>
             <a
               href={entry.url ?? "#"}
-              className="group/row grid grid-cols-[3.5rem_1fr_auto] items-center gap-4 px-4 py-3 hover:bg-black/5 sm:grid-cols-[4rem_1fr_1fr_auto]"
+              className="group/row grid grid-cols-[3.5rem_1fr_auto] items-center gap-4 px-4 py-3 transition-colors hover:bg-black/2 sm:grid-cols-[4rem_1fr_1fr_auto]"
             >
               <span className="text-eyebrow">{entry.year}</span>
               <span className="font-bold text-zinc-900 group-hover/row:underline">

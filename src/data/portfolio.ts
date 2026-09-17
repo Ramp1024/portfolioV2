@@ -4,6 +4,7 @@ export const portfolio: Portfolio = {
   profile: {
     name: "Ramprakash N",
     title: "Software Developer",
+    tagline: "engineer exploring ai, systems, and interesting problems.",
     location: "Bengaluru, KA",
     email: "n.ramprakash333@gmail.com",
     phone: "8667207006",
@@ -69,6 +70,7 @@ export const portfolio: Portfolio = {
         "TypeScript",
         "Docker",
       ],
+      github: "https://github.com/Ramp1024/Vault"
     },
     {
       title: "Conga Companion AI",

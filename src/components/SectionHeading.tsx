@@ -9,7 +9,10 @@ export default function SectionHeading({
   hideOnDesktop = false,
 }: SectionHeadingProps) {
   return (
-    <h2 className={`section-title mb-5 ${hideOnDesktop ? "lg:sr-only" : ""}`}>
+    <h2
+      className={`section-title mb-5 flex items-center gap-3 ${hideOnDesktop ? "lg:sr-only" : ""}`}
+    >
+      <span aria-hidden className="h-px w-6 shrink-0 bg-accent" />
       {children}
     </h2>
   );

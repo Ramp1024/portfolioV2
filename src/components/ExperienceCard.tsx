@@ -10,7 +10,7 @@ export default function ExperienceCard({
   highlights,
 }: ExperienceEntry) {
   return (
-    <div className="group grid gap-3 rounded px-4 py-2 transition-colors hover:bg-black/5 sm:grid-cols-[9rem_1fr] sm:gap-6">
+    <div className="grid gap-3 rounded px-4 py-2 sm:grid-cols-[9rem_1fr] sm:gap-6">
       <p className="text-eyebrow pt-1">{duration}</p>
       <div>
         <h3 className="font-bold text-zinc-900">{role}</h3>
